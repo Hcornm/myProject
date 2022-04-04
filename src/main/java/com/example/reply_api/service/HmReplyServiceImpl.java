@@ -67,14 +67,14 @@ public class HmReplyServiceImpl implements HmReplyService {
     @Override
     public HmReplyDto.hmReplyDelete hmReplyDelete(Long hmReplyId) {
         final HmReply hmReply = hmReplyRepositorySupport.findById(hmReplyId);
-
-        return hmReplyRepositoryManager.hmReplyDelete(hmReply);
-    }
-
-    @Override
-    public HmReplyDto.hmReplyUpdate hmReplyUpdate(HmReplyDto.hmReplyUpdateParam hmReplyUpdateParam) {
-        final HmReply hmReply = hmReplyRepositorySupport.findById(hmReplyUpdateParam.getHmReplyId());
-        return hmReplyRepositoryManager.hmReplyUpdate(hmReplyUpdateParam, hmReply);
+        
+                return hmReplyRepositoryManager.hmReplyDelete(hmReply);
+            }
+        
+            @Override
+            public HmReplyDto.hmReplyUpdate hmReplyUpdate(HmReplyDto.hmReplyUpdateParam hmReplyUpdateParam) {
+                final HmReply hmReply = hmReplyRepositorySupport.findById(hmReplyUpdateParam.getHmReplyId());
+                return hmReplyRepositoryManager.hmReplyUpdate(hmReplyUpdateParam, hmReply);
     }
 
 }

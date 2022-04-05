@@ -39,7 +39,7 @@ public class BoardDto {
         // 작성자
         private String writer;
 
-        // 작성일
+        // 작성일자
         private LocalDateTime writeDate;
 
         public boardList(Board board, Long replyCount) {

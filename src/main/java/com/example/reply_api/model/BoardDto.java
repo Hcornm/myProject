@@ -5,6 +5,7 @@ import java.util.function.Supplier;
 
 import com.example.reply_api.domain.Board;
 import com.example.reply_api.domain.BoardType;
+import com.example.reply_api.domain.BoardType.BoardTypeEnum;
 
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -81,6 +82,16 @@ public class BoardDto {
         private BoardType.BoardTypeEnum boardType;
         private String writer;
         private Long writeDate;
+
+        public boardInsertParam(String title, String content, BoardTypeEnum boardType, String writer,
+                Long writeDate) {
+            this.title = title;
+            this.content = content;
+            this.boardType = boardType;
+            this.writer = writer;
+            this.writeDate = writeDate;
+
+        }
 
         // insetBoard.get()으로 사용
         public Supplier<Board> insertBoard() {
